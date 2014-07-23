@@ -1,0 +1,2 @@
+include:
+- tempest.test.service

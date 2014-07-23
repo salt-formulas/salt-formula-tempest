@@ -1,0 +1,9 @@
+
+{% set test = salt['grains.filter_by']({
+    'Debian': {
+        'pkgs': ['python-setuptools', 'python-pip', 'python-dev', 'libxslt1-dev', 'libxml2-dev', 'libssl-dev', 'libffi-dev', 'patch', 'gcc'],
+    },
+    'RedHat': {
+        'pkgs': ['python-setuptools', 'python-pip', 'python-devel', 'libxslt-devel', 'libxml2-devel', 'openssl-devel', 'libffi-devel', 'patch', 'gcc'],
+    },
+}, merge=salt['pillar.get']('tempest:test')) %}
