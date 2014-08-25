@@ -12,6 +12,17 @@ This is a set of integration tests to be run against a live OpenStack cluster. T
           engine: git
           address: git://github.com/openstack/tempest.git
           revision: master
+        suite:
+          identity:
+            disable_ssl_certificate_validation: true
+            auth_version: v3
+            uri_v3:
+            region: RegionOne 
+          identity-feature-enabled:
+            trust: true
+            api_v2: false
+            api_v3: true
+
 
 
 ## Read more

@@ -30,9 +30,26 @@ tempest_app:
 
 tempest_config:
   file.managed:
-  - name: /etc/tempest.conf
+  - name: /srv/tempest/suite/etc/tempest.conf
   - source: salt://tempest/files/tempest.conf
   - template: jinja
   - mode: 644
 
+{#
+tempest_config:
+  ini_manage.options_present:
+  - name: /srv/tempest/suite/etc/tempest.conf
+  - sections:
+      {%- for suite_name, suite in test.suite.iteritems() %}
+      {{ suite_name }}:
+        {%- for prop_name, prop_value in suite.iteritems() %}
+        {{ prop_name }}: {{ prop_value}}
+        {%- endfor %}
+      {%- endfor %}
+  - require:
+    - git: tempest_app
+#}
+
 {%- endif %}
+
+
