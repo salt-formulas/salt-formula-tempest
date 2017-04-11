@@ -1,9 +1,14 @@
 
-# Tempest - The OpenStack Integration Test Suite
+===============
+Tempest Formula
+===============
 
 This is a set of integration tests to be run against a live OpenStack cluster. Tempest has batteries of tests for OpenStack API validation, Scenarios, and other specific tests useful in validating an OpenStack deployment.
 
-## Sample pillars
+Sample Pillars
+==============
+
+.. code-block:: yaml
 
     tempest:
       test:
@@ -24,8 +29,8 @@ This is a set of integration tests to be run against a live OpenStack cluster. T
             api_v3: true
 
 
-
-## Read more
+More Information
+================
 
 * http://docs.openstack.org/developer/tempest/overview.html
 * http://www.slideshare.net/masayukiigawa/tempest-scenariotests-20140512?related=1
